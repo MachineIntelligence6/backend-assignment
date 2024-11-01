@@ -14,11 +14,6 @@ app.use(express.json())
 app.use(express.urlencoded({ limit: 10 * 1024 * 1024, extended: true }))
 app.use('/static', express.static(path.join(__dirname, '../public')))
 
-// WELCOME API
-app.get("/", async (req, res) => {
-    res.send("WELCOME TO AGENT-AE BACKEND SERVER.")
-})
-
 // ROUTES MIDDLEWARES
 app.use("/", require("./routes/router"))
 
