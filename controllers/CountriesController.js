@@ -25,8 +25,6 @@ class CountriesController {
   };
 
   getSalesRepList = async (req, res) => {
-    let minCountriesForRep = 3;
-    let maxCountriesForRep = 7;
     try {
       const response = await CountryModel.aggregate([
         {
@@ -54,11 +52,7 @@ class CountriesController {
         };
       });
 
-      console.log("result ", result);
-
-      // Step 3: Return the response
       res.status(200).json({
-
         data: result,
       });
     } catch (error) {
